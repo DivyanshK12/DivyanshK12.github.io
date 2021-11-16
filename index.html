@@ -1,0 +1,671 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Project : Divyansh Kharbanda</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+}
+
+.simple-table-header {
+	background: rgb(247, 246, 243);
+	color: black;
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(145, 145, 142, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(187, 132, 108, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(215, 129, 58, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 148, 51, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(108, 155, 125, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(91, 151, 189, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(167, 130, 195, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(205, 116, 159, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(225, 111, 100, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(145, 145, 142, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(187, 132, 108, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(215, 129, 58, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 148, 51, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(108, 155, 125, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(91, 151, 189, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(167, 130, 195, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(205, 116, 159, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(225, 111, 100, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="b1a4ce1c-fefa-4589-8684-8dad625aedc2" class="page sans"><header><h1 class="page-title">Project : Divyansh Kharbanda</h1></header><div class="page-body"><h1 id="23c9c55e-a2ba-4153-9b4b-72b4cf55f680" class="">Overview </h1><p id="37ab123d-ae24-4d86-b985-a72f17b1c6e1" class="">This report summarizes the work I have done, while contributing to the Indian Pulsar Timing Array (InPTA) group, under the guidance of Prof. Shantanu Desai. The objective of InPTA is to detect, analyse and study nanoHertz Gravitational Waves. While having monitored a few observations remotely, the bulk of my contribution lies in the analysis of the observed pulsar data. </p><h1 id="96e2cfbe-ba62-4153-b259-b94b06f4cd55" class="">Introduction</h1><h2 id="28183759-c74f-4c4b-a8f2-5e89aecef765" class="">Pulsars and Timing</h2><p id="fe1ef777-09c5-4928-afaa-fc138356b693" class="">Pulsars are rotating neutron stars (~ 1.4 Solar mass with radius ~ 10 km) which form when massive stars die in a supernova.  They emit beams of radiation from their magnetic poles with wavelengths in the radio, X-ray and gamma spectrum.</p><p id="db824567-7721-45b0-ab38-714f41923d8b" class="">Pulsar Timing involves tracking pulsar rotation by measuring pulse arrival times (TOAs).  Through these time of arrivals, we calculate time of emissions at the pulsar. The complications involved in this calculation include :</p><ol type="1" id="1fc00209-f44b-4063-a6ce-e0987124acb0" class="numbered-list" start="1"><li>Pulsars slow down, hence the emission times are not constant. We fit our models to obtain the true fit for time of emissions.</li></ol><ol type="1" id="6e772187-e848-47eb-b3b4-0d558bad09ae" class="numbered-list" start="2"><li>The space between the pulsar and the Earth is not vaccum, but is the interstellar medium (ISM). This  causes the pulse to travel at sub-lightspeed, dependent on the frequency of the spectrum. The pulse is composed of a band of frequencies, each of which experiences this phenomena. To obtain the correct results,   the whole band is divided into N channels, data recorded at these channels, the added. Signals at different channels arrive at different times - addition will not give a good signal. We need to correct for this dispersive delay to get a good pulse.</li></ol><ol type="1" id="4ce63650-a1ee-47ae-a961-af858090e7d8" class="numbered-list" start="3"><li>R ̈omer delay due to the motion of the Earth around the sun. </li></ol><ol type="1" id="718ed33e-244d-4d26-aa17-17112e6c047d" class="numbered-list" start="4"><li>Effects arising out of special and general relativity :<ol type="a" id="194f0a23-a72c-445e-a7ef-64e36bc9e984" class="numbered-list" start="1"><li>Curvature of space time due to masses of other planets in our solar system, any companion to the pulsar and the pulsar itself. </li></ol><ol type="a" id="5348608c-3a15-443f-acc1-8817539063ce" class="numbered-list" start="2"><li>Motion of the pulsar relative to our planet. </li></ol><figure id="52b36a0d-e69e-4848-8d52-025cbdf22daf" class="image"><a href="Project%20Divyansh%20Kharbanda%2052b36a0de69e48488d52025cbdf22daf/Untitled.png"><img style="width:672px" src="Project%20Divyansh%20Kharbanda%2052b36a0de69e48488d52025cbdf22daf/Untitled.png"/></a></figure></li></ol><p id="82abebf0-64f5-4f72-b981-4d5153b447ad" class="">The R ̈omer, Einstein and Shapiro delay all contribute to the difficulties in the analysis. To ensure uniform and complete analysis of the data, a data processing pipeline was developed by the InPTA for use.</p><div id="46940e47-693c-4f26-be85-cf16a633711e" class="column-list"><div id="ed4e39cf-5d32-4fb4-8317-7f18f2d9f767" style="width:50%" class="column"><figure id="d21684dc-9f64-4c6f-b09f-b29cc4288971" class="image"><a href="Project%20Divyansh%20Kharbanda%2052b36a0de69e48488d52025cbdf22daf/Untitled%201.png"><img style="width:427px" src="Project%20Divyansh%20Kharbanda%2052b36a0de69e48488d52025cbdf22daf/Untitled%201.png"/></a><figcaption>Ryan Lynch: Pulsar searching tutorial for PSC</figcaption></figure></div><div id="22c03635-c5bc-4149-98c0-7657dda42261" style="width:50%" class="column"><figure id="d7eb5f16-62a5-4d87-8497-e70a49da52bb" class="image"><a href="Project%20Divyansh%20Kharbanda%2052b36a0de69e48488d52025cbdf22daf/Untitled%202.png"><img style="width:427px" src="Project%20Divyansh%20Kharbanda%2052b36a0de69e48488d52025cbdf22daf/Untitled%202.png"/></a><figcaption>James McKee: Pulsar timing tutorial, IPTA 2018 student week</figcaption></figure></div></div><p id="caf1bb98-6095-402f-b7bc-47cd47fb11b9" class="">The data processing pipeline folds the observed data to obtain a time-averaged or &quot;folded&quot; profile. This is then compared to a template profile in post processing steps to figure out the signal to noise ratio, dispersion measures and so on. </p><h2 id="16cd1e75-6e26-4d72-bd01-21b7c10ef847" class="">PINTA</h2><p id="7372e26e-db2c-499e-8205-24b35deabadb" class="">PINTA, which stands for the &quot;Pipeline for the Indian Pulsar Timing Array&quot; is the software developed for the InPTA experiment to address these concerns as well as to improve the efficiency, reliability, and user friendliness of the data reduction process and to ensure faster turnaround time from observations to PTA analysis.  This allows for the homogeneity in data reduction practices to avoid non-uniformity in the data products used for PTA analysis, which can introduce systematic errors.</p><figure id="3bf91069-c3cf-4261-b8ea-8dd40af5e979" class="image"><a href="Project%20Divyansh%20Kharbanda%2052b36a0de69e48488d52025cbdf22daf/Untitled%203.png"><img style="width:976px" src="Project%20Divyansh%20Kharbanda%2052b36a0de69e48488d52025cbdf22daf/Untitled%203.png"/></a></figure><p id="3b611acd-926c-4347-9436-39fd2ae27223" class="">The processing pipeline takes in  .raw/.dat files and timestamps, as obtained from an observation as its input. It also takes in a <a href="http://pipeline.in">pipeline.in</a> file containing the metadata parameters with which to process the raw data files. The resulting output is in the form of archive files, a pulsar data format widely used among other PTAs. </p><p id="b3c7d651-1542-40c3-98e5-10443cfcde2d" class="">The pipeline is made up of multiple softwares which perform the functions of Dedispersion, Folding, Single Pulse Analysis,  RFI cleaning, Template making, ToA generation, Flux calibration and Pulsar Calibration; to obtain the accurate results. </p><p id="2b636f60-6441-47cb-b9e9-34331771b176" class="">Pinta performs RFI mitigation using two different packages.<div class="indented"><ul id="728cee43-94e6-411e-b4c7-efa01e61c2c9" class="bulleted-list"><li style="list-style-type:disc"><strong>RFIClean</strong> : Removes periodic RFI (Eg: 50 Hz power line) and time-localized RFI [Maan et al., in prep]</li></ul><ul id="4809d8b4-991c-40e2-aa89-9b0e7be15cb1" class="bulleted-list"><li style="list-style-type:disc"><strong>gptool</strong> : Removes RFI localized in time or frequency [Chowdhary &amp; Gupta, In prep]</li></ul></div></p><hr id="ffcffa8c-5e77-48a5-b750-eb23e8169461"/><h1 id="ae949544-fcc1-4355-b3a1-5c20d869d77d" class=""><strong>Evidence for profile changes in PSR J1713+0747 using the uGMRT</strong></h1><h2 id="93cf2ae6-e815-4f5e-986e-8e0238223927" class="">Introduction</h2><p id="1913f729-1bf0-4be7-8792-9e48fe0e7161" class="">SR J1713+0747 is one of the most precisely timed pulsars in the international pulsar timing array experiment. This pulsar showed an abrupt profile shape change between 2021 April 16, (MJD 59320) and 2021 April 17 (MJD 59321). My contribution in the group effort to report the results involved processing multiple batches of pulsar data. </p><h2 id="2e2288b6-ed08-4768-9207-def23fc1b5db" class="">Processing Individual Epochs</h2><p id="ade4c7ad-7a42-47d8-8168-032541a4d421" class="">The primary processing of pulsar data results in an output that looks like the following. It can easily be observed that a pulsar was detected in the first observation, while it was not in the second one (note the pulse shape in the bottom plot).</p><div id="0c4de6f5-29e9-4284-ab65-50f010139c51" class="column-list"><div id="1f528d68-d511-4f54-ac5f-7fd942bc27d5" style="width:50%" class="column"><figure id="f54506ac-30ca-40c6-999a-b7205ff31304" class="image"><a href="Project%20Divyansh%20Kharbanda%2052b36a0de69e48488d52025cbdf22daf/Untitled%204.png"><img style="width:336px" src="Project%20Divyansh%20Kharbanda%2052b36a0de69e48488d52025cbdf22daf/Untitled%204.png"/></a><figcaption>Output from the gptool processing of an observation data on Jul 07 (monitored on by me) </figcaption></figure></div><div id="491a2852-498a-4ee9-86d9-a4e726b08ed9" style="width:50%" class="column"><figure id="48ed0586-f6d5-4028-bb0e-41fc1f0b0df4" class="image"><a href="Project%20Divyansh%20Kharbanda%2052b36a0de69e48488d52025cbdf22daf/Untitled%205.png"><img style="width:1343px" src="Project%20Divyansh%20Kharbanda%2052b36a0de69e48488d52025cbdf22daf/Untitled%205.png"/></a><figcaption>Output from rfiClean processing of an observation data on Jul 07 (monitored on by me)</figcaption></figure></div></div><div id="9d269c66-48e0-4519-b10a-541d032c1836" class="column-list"><div id="37af031b-0bab-458b-867e-07caf8f214a2" style="width:50%" class="column"><figure id="2086c30f-6dd1-48a9-bb31-f734f052da3d" class="image"><a href="Project%20Divyansh%20Kharbanda%2052b36a0de69e48488d52025cbdf22daf/Untitled%206.png"><img style="width:1346px" src="Project%20Divyansh%20Kharbanda%2052b36a0de69e48488d52025cbdf22daf/Untitled%206.png"/></a><figcaption>Output from the gptool processing of an observation data on Aug 09 (monitored on by me) </figcaption></figure></div><div id="4fa48ae9-2d8a-43bc-84ca-20263ebf733a" style="width:50%" class="column"><figure id="69f9cc18-ae46-485d-8160-e51c00ac1c81" class="image"><a href="Project%20Divyansh%20Kharbanda%2052b36a0de69e48488d52025cbdf22daf/Untitled%207.png"><img style="width:1346px" src="Project%20Divyansh%20Kharbanda%2052b36a0de69e48488d52025cbdf22daf/Untitled%207.png"/></a><figcaption>Output from the rfiClean processing of an observation data on Aug 09 (monitored on by me) </figcaption></figure></div></div><h2 id="2f554fdd-b80a-4469-aeee-482736191c7f" class="">The Profile Change</h2><p id="3da12f39-8a12-42a1-8168-59addc994db6" class="">We used 20 observing epochs before the event with a cadence of around 14 days, and 6 epochs after the event with cadence ranging from 3–10 days. After de-dispersion and collapsing all the sub integrations and sub-bands, the folded profiles were normalized with the area under the profile and then stacked together to produce a single multi-epoch file for each of Band 3 and 5. These stacked profiles are shown as color-map plots. </p><figure id="214041d4-9289-4199-8c88-56b2e3ea87bd" class="image"><a href="Project%20Divyansh%20Kharbanda%2052b36a0de69e48488d52025cbdf22daf/B3Plot1.png"><img style="width:983px" src="Project%20Divyansh%20Kharbanda%2052b36a0de69e48488d52025cbdf22daf/B3Plot1.png"/></a></figure><figure id="c5b64bb5-4382-4b55-b6cb-5b17265e2c69" class="image"><a href="Project%20Divyansh%20Kharbanda%2052b36a0de69e48488d52025cbdf22daf/B5Plot1.png"><img style="width:983px" src="Project%20Divyansh%20Kharbanda%2052b36a0de69e48488d52025cbdf22daf/B5Plot1.png"/></a></figure><figure id="37ba7c31-6a06-4b89-b7dc-4e6d16b9d9b8" class="image"><a href="Project%20Divyansh%20Kharbanda%2052b36a0de69e48488d52025cbdf22daf/Untitled%208.png"><img style="width:864px" src="Project%20Divyansh%20Kharbanda%2052b36a0de69e48488d52025cbdf22daf/Untitled%208.png"/></a></figure><p id="1650d505-4eec-4a00-bcd7-4872bb1e85f9" class="">
+</p><p id="65f59185-a814-4576-9393-8d0e3dd4c661" class="">A distinct change is seen in both Band 3 and Band 5 before and after MJD 59321, reported to be the epoch of the event. The reduced data were collapsed in frequency and time for typical profiles before and after the event for both the bands and these are shown above. We see that the broad central component has given way to a narrow central component with the appearance of a weaker broad trailing component in Band 3 after the epoch of transition (EoT). On the other hand, the leading component has weakened with the appearance of a trailing component in Band 5 data.</p><p id="f62a0546-aa72-49e5-84c3-ebe400da7e00" class="">
+</p><h1 id="b30a4148-c953-4e46-a8e3-df3b453bdb3d" class="">V6 Validation</h1><h2 id="81d34f7d-375b-424a-9b7a-750564042ce7" class="">Introduction</h2><p id="b4c7b695-f14e-46ac-8376-dc444becc2ea" class="">The Data processing pipeline, Pinta, receives regular updates from its maintainers. The latest version of the same is version 6, with which a majority of the pulsar data for the year was processed. This processing pipeline runs across multiple production grade servers to help provide maximum work efficiency. However, on upgrading it from version 5 to version 6, a discrepancy was created due to different configuration files being sourced on different servers. This could possibly have affected the processed data. </p><p id="1a371930-85bd-4041-887e-827c39132256" class="">To check if the above mentioned scenario had really created an issue, a plan was formulated to process data from pulsars with high SNR, using configuration files with different parameters (in local server directories), to check the impact of having different/ no configuration file on the processed data.</p><h2 id="ac3117a5-25a0-456c-aaa6-bd1ebfa46153" class="">Action Taken</h2><p id="e045b235-da22-4996-9987-fd86faeea2c4" class="">The work was divided to process specific epochs of two pulsars J1713+0747 and J1939+2134, as they both had high SNRs. The configuration files were to be identical, with change in two parameters :</p><ol type="1" id="d56dd11f-f033-4078-8600-7e4e37a5c462" class="numbered-list" start="1"><li>Barycentric Correction (Value could be 0 or 1). </li></ol><ol type="1" id="874a2d3a-d101-46c2-8319-3abcb51134b4" class="numbered-list" start="2"><li>Rounding Correction (Value could be 0 or 1). </li></ol><p id="fb87f60e-d49a-485a-925a-37f98d61000e" class="">One person was to process without the configuration file. This created 5 possible ways of processing a pulsar. I was to process the J1939+2134 pulsar with Bar 1 and Round 0 configuration. The process involved running pdmp and pat on V5 and V6 Pinta processed J1909 Pulsar, and pdmp, pat and profile comparison on V6 Pinta processed J939 to find any discrepancies. The results obtained were summarized in the following plots.</p><figure id="673da1b2-3e78-4991-b4dc-e195196c556f" class="image"><a href="Project%20Divyansh%20Kharbanda%2052b36a0de69e48488d52025cbdf22daf/Untitled%209.png"><img style="width:938px" src="Project%20Divyansh%20Kharbanda%2052b36a0de69e48488d52025cbdf22daf/Untitled%209.png"/></a></figure><figure id="45aac5f4-f310-4709-82d4-953e5c58fe5e" class="image"><a href="Project%20Divyansh%20Kharbanda%2052b36a0de69e48488d52025cbdf22daf/V6Validation1.png"><img style="width:800px" src="Project%20Divyansh%20Kharbanda%2052b36a0de69e48488d52025cbdf22daf/V6Validation1.png"/></a></figure><p id="16bca6f4-9849-436e-a949-a3c532f9d27c" class="">DM Stands for Dispersion Measure, BC denotes barycentric period, TC denotes Topocentric period and SNR denotes Signal to Noise Ratio. The processing results in a data sample output that looks as follows : (Note that this output is for a different pulsar epoch)</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="76f11e01-e15d-4709-b432-dde4e458ba41"><div style="font-size:1.5em"><span class="icon">🖥️</span></div><div style="width:100%">Best S/N = 204.66
+BC MJD = 59106.664774
+BC Period (ms) = 4.570535503  TC Period (ms) =  4.570474288  DM =   15.9910
+Best BC Period (ms) = 4.570535454  Correction (ms) = -4.94526339e-08  Error (ms) = 7.424341696e-08
+Best TC Period (ms) = 4.570474239  Correction (ms) = -4.945197141e-08  Error (ms) = 7.424341696e-08
+Best DM =   15.9876  Correction = -0.00341  Error = 0.002095
+Best BC Frequency (Hz) = 218.7927454  Error (Hz) = 3.554052078e-06
+Pulse width (bins) = 13
+Best Pdot =   0 s/s
+Best Accn =   0 m/s</div></figure><p id="a3244051-0031-4d07-8602-6debb8a31d1e" class="">The above plots were made from results obtained in a similar manner for all the epochs.</p><h2 id="9f4f2e96-0fe5-42c3-a7cb-c76db3c7b4c4" class="">Determination of the frequency difference</h2><p id="f3ca905e-847f-4e05-b97d-91c08e71916a" class="">The following steps were followed to find out the frequency difference of 10KHz :</p><ol type="1" id="ee1ed8f2-ab21-4bd3-9426-a39babf8992e" class="numbered-list" start="1"><li>Find mean DM1 of J1713 pulsar before the jump event in Band 3.</li></ol><ol type="1" id="a89cdd8a-a7ae-4df6-8949-60aae00fe2e8" class="numbered-list" start="2"><li>Substitute in LSB <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mrow><mi>l</mi><mi>o</mi></mrow></msub></mrow><annotation encoding="application/x-tex">F_{lo}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.01968em;">l</span><span class="mord mathnormal mtight">o</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span> as 0.5 (GHz),
+<style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>F</mi></mrow><annotation encoding="application/x-tex">\Delta F</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord">Δ</span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span></span></span></span></span><span>﻿</span></span> as 0.2, <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>N</mi><mrow><mi>c</mi><mi>h</mi><mi>a</mi><mi>n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">N_{chan}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">c</span><span class="mord mathnormal mtight">han</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span> = 256 and calculate <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mrow><mn>1</mn><mi>X</mi></mrow></msub></mrow><annotation encoding="application/x-tex">F_{1X}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mathnormal mtight" style="margin-right:0.07847em;">X</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span> which is <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ν</mi><mrow><mi>h</mi><mi>i</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\nu_{hi}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.06366em;">ν</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.06366em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">hi</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span>.<figure id="a406dcfa-5df0-4588-95d7-b5a4a296cb30" class="image"><a href="Project%20Divyansh%20Kharbanda%2052b36a0de69e48488d52025cbdf22daf/Untitled%2010.png"><img style="width:408px" src="Project%20Divyansh%20Kharbanda%2052b36a0de69e48488d52025cbdf22daf/Untitled%2010.png"/></a></figure></li></ol><ol type="1" id="6a35cd05-5ff7-41fa-bd73-1659c8aca77b" class="numbered-list" start="3"><li><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ν</mi><mrow><mi>l</mi><mi>o</mi></mrow></msub><mo>=</mo><msub><mi>ν</mi><mrow><mi>h</mi><mi>i</mi></mrow></msub><mo>−</mo><mi mathvariant="normal">Δ</mi><mi>F</mi></mrow><annotation encoding="application/x-tex">\nu_{lo} = \nu_{hi} - \Delta F</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.06366em;">ν</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.06366em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.01968em;">l</span><span class="mord mathnormal mtight">o</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.06366em;">ν</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.06366em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">hi</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord">Δ</span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span></span></span></span></span><span>﻿</span></span></li></ol><ol type="1" id="701b5ac0-d18c-472b-8250-135a9eb77229" class="numbered-list" start="4"><li>Substitute in equation below this value of DM1, <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ν</mi><mrow><mi>l</mi><mi>o</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\nu_{lo}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.06366em;">ν</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.06366em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.01968em;">l</span><span class="mord mathnormal mtight">o</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span> and
+<style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ν</mi><mrow><mi>h</mi><mi>i</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\nu_{hi}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.06366em;">ν</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.06366em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">hi</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span> as calculated above and calculate <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">\Delta t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord">Δ</span><span class="mord mathnormal">t</span></span></span></span></span><span>﻿</span></span></li></ol><p id="a6e70de5-6085-4afd-9f5e-3408d9887a2b" class=""><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>t</mi><mo>=</mo><mn>4.15</mn><mtext>  </mtext><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">s</mi></mrow><mo>×</mo><mrow><mo fence="true">[</mo><mrow><msup><mrow><mo fence="true">(</mo><mfrac><msub><mi>ν</mi><mrow><mi mathvariant="normal">l</mi><mi mathvariant="normal">o</mi></mrow></msub><mrow><mi mathvariant="normal">G</mi><mi mathvariant="normal">H</mi><mi mathvariant="normal">z</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mrow><mo>−</mo><mn>2</mn></mrow></msup><mo>−</mo><msup><mrow><mo fence="true">(</mo><mfrac><msub><mi>ν</mi><mrow><mi mathvariant="normal">h</mi><mi mathvariant="normal">i</mi></mrow></msub><mrow><mi mathvariant="normal">G</mi><mi mathvariant="normal">H</mi><mi mathvariant="normal">z</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mrow><mo>−</mo><mn>2</mn></mrow></msup></mrow><mo fence="true">]</mo></mrow><mo>×</mo><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">D</mi><mi mathvariant="normal">M</mi></mrow><mrow><mi mathvariant="normal">c</mi><msup><mi mathvariant="normal">m</mi><mrow><mo>−</mo><mn>3</mn></mrow></msup><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">c</mi></mrow></mrow></mfrac><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">\Delta t = 4.15\;{\rm{ms}} \times \left[ {{{\left({{{{\nu _{{\rm{lo}}}}} \over {{\rm{GHz}}}}} \right)}^{- 2}} - {{\left({{{{\nu _{{\rm{hi}}}}} \over {{\rm{GHz}}}}} \right)}^{- 2}}} \right] \times \left({{{{\rm{DM}}} \over {{\rm{c}}{{\rm{m}}^{{\rm{- 3}}}}{\rm{pc}}}}} \right)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord">Δ</span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">4.15</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord"><span class="mord"><span class="mord"><span class="mord mathrm">ms</span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.80002em;vertical-align:-0.65002em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size2">[</span></span><span class="mord"><span class="mord"><span class="mord"><span class="mord"><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size1">(</span></span><span class="mord"><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.717252em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathrm mtight">GHz</span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.41586em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.06366em;">ν</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3448em;"><span style="top:-2.3487714285714287em;margin-left:-0.06366em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathrm mtight">lo</span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15122857142857138em;"><span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size1">)</span></span></span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:1.054008em;"><span style="top:-3.3029em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord"><span class="mord"><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size1">(</span></span><span class="mord"><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.717252em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathrm mtight">GHz</span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.41586em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.06366em;">ν</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3448em;"><span style="top:-2.3487714285714287em;margin-left:-0.06366em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathrm mtight">hi</span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15122857142857138em;"><span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size1">)</span></span></span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:1.054008em;"><span style="top:-3.3029em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size2">]</span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.80002em;vertical-align:-0.65002em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size2">(</span></span><span class="mord"><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.872331em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathrm mtight">c</span></span></span></span><span class="mord mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathrm mtight">m</span></span></span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7463142857142857em;"><span style="top:-2.786em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mathrm mtight">3</span></span></span></span></span></span></span></span></span></span></span></span></span><span class="mord mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathrm mtight">pc</span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathrm mtight">DM</span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.481108em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size2">)</span></span></span></span></span></span></span><span>﻿</span></span></p><hr id="7aa821fb-820e-4d6a-93d7-b051cb82254a"/><ol type="1" id="c27d7f41-a616-440b-b996-613be587c512" class="numbered-list" start="1"><li>Now find mean DM2 of J1713 pulsar after the DM jump.</li></ol><ol type="1" id="f11c3e2f-c1dd-4b58-a954-27e2dc211ddd" class="numbered-list" start="2"><li>Substitute <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">\Delta t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord">Δ</span><span class="mord mathnormal">t</span></span></span></span></span><span>﻿</span></span> calculated in 2, this DM2 and calculate
+the factor in square bracket equation mentioned above. </li></ol><ol type="1" id="d52b9a6d-98c5-41f3-862d-2baa81e05498" class="numbered-list" start="3"><li>Obtain the <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ν</mi><mrow><mi>l</mi><mi>o</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\nu_{lo}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.06366em;">ν</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.06366em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.01968em;">l</span><span class="mord mathnormal mtight">o</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span> and <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ν</mi><mrow><mi>h</mi><mi>i</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\nu_{hi}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.06366em;">ν</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.06366em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">hi</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span> values. The difference between them gives the change in frequency. This was done using the sympy library in python to solve the equation. </li></ol><ol type="1" id="332ea00c-280f-403e-8f3e-196f2df5258f" class="numbered-list" start="4"><li>Repeat the same for J1909 pulsar, the results should be same for two pulsars.</li></ol><h2 id="c55aba3c-b3de-43a7-a113-0b8280a8cc23" class="">Results</h2><p id="4e83eb08-9377-4e3b-a97f-055498becdf2" class="">The following mentions a subset of the results. It can be notes that there is a change in frequency of about 10KHz in al of these calculations. </p><ul id="c6dde52e-bc4b-460e-873e-6c8f7eb4c7dd" class="bulleted-list"><li style="list-style-type:disc">J1713 (V5) :<ul id="1c3c47c8-309a-44c0-9f6a-62e302cee450" class="bulleted-list"><li style="list-style-type:circle">DM of 15.998783 prejump MJD gave delta t : 475.16733824824945 (ms)</li></ul><ul id="6a464a2e-a06c-4be1-900b-1eda39324553" class="bulleted-list"><li style="list-style-type:circle">DM of 15.997628 postjump MJD gave F_LO : 0.499991180113022 (GHz)</li></ul><ul id="7945d38f-a62c-4e9c-b71d-571da5648d72" class="bulleted-list"><li style="list-style-type:circle">deltaF : 8.819886977984304e-06 GHz</li></ul></li></ul><ul id="434b0c23-9d36-40f4-838f-3ebef8768326" class="bulleted-list"><li style="list-style-type:disc">J1713 (V6) :<ul id="ba6e3be0-401d-453e-951a-168b299a5ca6" class="bulleted-list"><li style="list-style-type:circle">DM of 15.988197 prejump MJD gave delta t : 474.8529317435362 (ms)</li></ul><ul id="eb2dbfea-773f-4cb6-aa40-888b02fe884f" class="bulleted-list"><li style="list-style-type:circle">DM of 15.986748 postjump MJD gave F_LO : 0.499988927659255 (GHz)</li></ul><ul id="827f484c-bf46-4c3c-8863-69d795409244" class="bulleted-list"><li style="list-style-type:circle">deltaF : 11.07234074498864e-06 GHz</li></ul></li></ul><ul id="572919f1-76df-422a-8dd5-18105d44773d" class="bulleted-list"><li style="list-style-type:disc">J1909 (V5) :<ul id="cdfd1b39-8824-4d5d-a64d-ea91761a0311" class="bulleted-list"><li style="list-style-type:circle">DM of 10.391595 prejump MJD gave delta t : 308.6326338887038 (ms)</li></ul><ul id="6ecd23c2-cd86-4424-bbba-642c2efd0deb" class="bulleted-list"><li style="list-style-type:circle">DM of 10.391000 postjump MJD gave F_LO : 0.499993004791562 (GHz)</li></ul><ul id="63b68882-8d20-4698-a8a9-e477474c6e89" class="bulleted-list"><li style="list-style-type:circle">deltaF : 6.995208437998723e-06 GHz</li></ul></li></ul><ul id="bd859399-2889-430e-87f2-ce08da05df65" class="bulleted-list"><li style="list-style-type:disc">J1909 (V6) :<ul id="5b6545d9-89f0-49fc-9f6b-80527e1ef733" class="bulleted-list"><li style="list-style-type:circle">DM of 10.391048 prejump MJD gave delta t : 308.6163878696146 (ms)</li></ul><ul id="a555e18c-8ff8-441d-b53a-6e7facf8f2fb" class="bulleted-list"><li style="list-style-type:circle">DM of 10.390474 postjump gave F_LO : 0.499993251330391 (GHz)</li></ul><ul id="49a419f0-1632-4fab-a9ac-00e293281f17" class="bulleted-list"><li style="list-style-type:circle">deltaF : 6.74866960898024e-06 GHz</li></ul></li></ul><hr id="72814d8a-fe11-4e7e-9917-7c3ac4aa115a"/><h2 id="73b4bc62-70db-4f65-b94e-eb7c674e2f5e" class="">Conclusion</h2><p id="3235854d-fc9a-4bd8-99d2-2f172ebe0e6a" class="">The main conclusion was that V6 Analysis was valid and can be used for science. </p><p id="576d39b5-9f26-45e4-995b-9e777df42fa4" class="">It was seen that pdmp DMs, pat frequency match for all 4 cases. This suggested that .psrchive.cfg settings do not matter for DSPSR, but these matter in post-processing by psrchive. For correct post-processing by psrchive, Bar 1 Round 0 config file is recommended.</p><p id="aa2b9ed3-37e8-47a6-b24e-d02a7fa5867c" class="">The DM jump appears to be due to a frequency shift in LO of +10 KHz in Cycle 39, Cycle 40. There is an offset seen in the engineering test of +10 kHz in opposite direction. A correction of FITS header by +10 KHz and pipeline.in LO to 500.010 fixes this problem for all data from Jan 15, 2021 till date July 28, 2021. </p><h1 id="04c0e5f8-1ba0-4912-8069-8842871a34cd" class="">Acknowledgement</h1><h1 id="3a651eff-241a-423d-8083-b07d9e33692c" class="">Reference Links</h1><ol type="1" id="c3c9a162-75f4-4ae8-8a83-237fcd3097f8" class="numbered-list" start="1"><li>PINTA : <a href="https://arxiv.org/pdf/2007.02930.pdf">2007.02930.pdf (arxiv.org)</a></li></ol><ol type="1" id="279994ba-634f-4b68-80bb-19e07bbbf3aa" class="numbered-list" start="2"><li><a href="https://academic.oup.com/mnrasl/article/507/1/L57/6356572">Evidence for profile changes in PSR J1713+0747 using the uGMRT | Monthly Notices of the Royal Astronomical Society: Letters | Oxford Academic (oup.com)</a></li></ol><ol type="1" id="df70b66c-cac5-4673-8655-a447e463f675" class="numbered-list" start="3"><li><a href="https://link.springer.com/article/10.12942/lrr-2008-8">Binary and Millisecond Pulsars | SpringerLink</a></li></ol><p id="265651f6-a02f-47e3-8286-af71eac57c90" class="">
+</p></div></article></body></html>
